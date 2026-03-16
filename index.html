@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Candy Sudoku – Support</title>
+<title>Candy Sudoku – Privacy & Support</title>
 
 <style>
 
@@ -62,6 +62,7 @@ margin-bottom:16px;
 border:1px solid #d2d2d7;
 border-radius:8px;
 font-size:14px;
+box-sizing:border-box;
 }
 
 textarea{
@@ -104,28 +105,46 @@ text-decoration:none;
 
 <header>
 <h1>Candy Sudoku – Sweet Logic</h1>
-<div class="subtitle">Support & Privacy</div>
+<div class="subtitle">Privacy & Support</div>
 </header>
 
+
+<!-- PRIVACY POLICY -->
+
 <div class="card">
-<h2>Support</h2>
 
-<p>If you need help with the game, have feedback, or found a bug, feel free to contact us.</p>
+<h2>Privacy Policy</h2>
 
-<p><strong>Email:</strong>  
-<a href="mailto:montytheithero@gmail.com">montytheithero@gmail.com</a></p>
+<p><strong>Last Updated:</strong> April 5, 2025</p>
+
+<p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
+
+<p>The app displays advertisements to support free access. These ads are served by an advertising network, which may use anonymous, non-personal information such as device type or usage patterns to deliver relevant ads.</p>
+
+<p>No personally identifiable information such as name, email address, or account credentials is collected by this application.</p>
+
+<p>All in-app purchases are securely processed through the App Store. We do not have access to your payment information.</p>
+
+<p>If you are under 13 years old, please play with the permission of a parent or guardian.</p>
+
+<p>By using this app, you agree to the practices described in this policy.</p>
 
 </div>
 
+
+<!-- CONTACT FORM -->
 
 <div class="card">
 
 <h2>Contact Form</h2>
 
-<form action="https://formspree.io/f/mvzwwkgo" method="POST">
+<form id="contactForm" action="https://formspree.io/f/mvzwwkgo" method="POST">
 
 <input type="hidden" name="_subject" value="Candy Sudoku Support Request">
 
+<input type="hidden" id="formTime" name="formTime">
+
+<!-- Honeypot spam trap -->
 <input type="text" name="_gotcha" style="display:none">
 
 <label>Name</label>
@@ -144,21 +163,19 @@ text-decoration:none;
 </div>
 
 
+<!-- SUPPORT -->
+
 <div class="card">
 
-<h2>Privacy Policy</h2>
+<h2>Support</h2>
 
-<p><strong>Last Updated:</strong> April 5, 2025</p>
+<p>If you experience issues, have questions, or want to report a bug, you can contact us directly:</p>
 
-<p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
-
-<p>The app displays advertisements to support free access. These ads are served by an advertising network, which may use anonymous, non-personal information (such as device type or usage patterns) to deliver relevant content. No personally identifiable details — including names, email addresses, or passwords — are collected or shared.</p>
-
-<p>All in-app purchases, such as the option to remove ads, are securely handled through the App Store. We do not have access to your payment information.</p>
-
-<p>If you are under 13 years old, please play with the permission of a parent or guardian.</p>
-
-<p>By using this app, you agree to the practices described in this Privacy Policy.</p>
+<p><strong>Email:</strong>
+<a href="mailto:montytheithero@gmail.com">
+montytheithero@gmail.com
+</a>
+</p>
 
 </div>
 
@@ -169,6 +186,25 @@ text-decoration:none;
 
 </div>
 
-</body>
 
+<script>
+
+const startTime = Date.now();
+document.getElementById("formTime").value = startTime;
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+const now = Date.now();
+const seconds = (now - startTime) / 1000;
+
+if(seconds < 4){
+e.preventDefault();
+alert("Spam protection triggered. Please try again.");
+}
+
+});
+
+</script>
+
+</body>
 </html>
