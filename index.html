@@ -1,32 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Privacy Policy – Candy Sudoku – Sweet Logic</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 700px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
-    h1, h2 { color: #1d1d1f; }
-    .footer { margin-top: 50px; font-size: 0.9em; color: #666; text-align: center; }
-  </style>
+<meta charset="UTF-8">
+<title>Privacy Policy – Candy Sudoku – Sweet Logic</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+max-width:720px;
+margin:40px auto;
+padding:20px;
+line-height:1.6;
+color:#333;
+background:#fafafa;
+}
+
+h1,h2{
+color:#1d1d1f;
+}
+
+.contact-box{
+margin-top:50px;
+padding:25px;
+background:white;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+label{
+font-size:14px;
+font-weight:600;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:6px;
+margin-bottom:18px;
+border:1px solid #d2d2d7;
+border-radius:8px;
+font-size:14px;
+box-sizing:border-box;
+}
+
+textarea{
+resize:vertical;
+}
+
+button{
+background:#1d1d1f;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:8px;
+font-size:15px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.footer{
+margin-top:60px;
+font-size:0.9em;
+color:#666;
+text-align:center;
+}
+
+.success-message{
+display:none;
+margin-top:15px;
+color:green;
+font-size:14px;
+}
+
+</style>
 </head>
+
 <body>
-  <h1>Privacy Policy for Candy Sudoku – Sweet Logic</h1>
-  <p><strong>Last Updated:</strong> April 5, 2025</p>
 
-  <p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
+<h1>Privacy Policy for Candy Sudoku – Sweet Logic</h1>
+<p><strong>Last Updated:</strong> April 5, 2025</p>
 
-  <p>The app displays advertisements to support free access. These ads are served by an advertising network, which may use anonymous, non-personal information (such as device type or usage patterns) to deliver relevant content. No personally identifiable details — including names, email addresses, or passwords — are collected or shared. The advertising network may use your device’s advertising identifier for ad targeting, a practice Apple defines as “tracking.”</p>
+<p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
 
-  <p>All in-app purchases, such as the option to remove ads, are securely handled through the App Store. We do not have access to your payment information or account credentials.</p>
+<p>The app displays advertisements to support free access. These ads are served by an advertising network, which may use anonymous, non-personal information (such as device type or usage patterns) to deliver relevant content. No personally identifiable details — including names, email addresses, or passwords — are collected or shared. The advertising network may use your device’s advertising identifier for ad targeting, a practice Apple defines as “tracking.”</p>
 
-  <p>We do not engage in behavioral profiling or data sharing with third parties beyond what is necessary for ad delivery and app functionality.</p>
+<p>All in-app purchases, such as the option to remove ads, are securely handled through the App Store. We do not have access to your payment information or account credentials.</p>
 
-  <p>If you are under 13 years old, please play with the permission of a parent or guardian. The game is family-friendly and does not contain inappropriate content.</p>
+<p>We do not engage in behavioral profiling or data sharing with third parties beyond what is necessary for ad delivery and app functionality.</p>
 
-  <p>By using this app, you agree to the practices described in this Privacy Policy. We reserve the right to update this policy over time, but future changes will remain focused on user privacy and transparency.</p>
+<p>If you are under 13 years old, please play with the permission of a parent or guardian. The game is family-friendly and does not contain inappropriate content.</p>
 
-  <div class="footer">
-    © 2025 Candy Sudoku – Sweet Logic. All rights reserved.
-  </div>
+<p>By using this app, you agree to the practices described in this Privacy Policy. We reserve the right to update this policy over time, but future changes will remain focused on user privacy and transparency.</p>
+
+
+<div class="contact-box">
+
+<h2>Contact</h2>
+
+<form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input type="hidden" name="_subject" value="Candy Sudoku Contact Form">
+
+<!-- spam protection -->
+<input type="text" name="_gotcha" style="display:none">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Message</label>
+<textarea name="message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+
+<div class="success-message" id="successMessage">
+Message sent successfully.
+</div>
+
+</form>
+
+</div>
+
+
+<div class="footer">
+© 2025 Candy Sudoku – Sweet Logic. All rights reserved.
+</div>
+
+
+<script>
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const data = new FormData(form);
+
+const response = await fetch(form.action,{
+method:"POST",
+body:data,
+headers:{
+'Accept':'application/json'
+}
+});
+
+if(response.ok){
+document.getElementById("successMessage").style.display="block";
+form.reset();
+}
+
+});
+
+</script>
+
 </body>
 </html>
