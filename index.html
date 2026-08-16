@@ -5,94 +5,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Candy Sudoku – Privacy & Support</title>
+<title>GeoPassport – Privacy & Support</title>
 
 <style>
 
-body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-margin:0;
-background:#f5f5f7;
-color:#1d1d1f;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  line-height: 1.5;
 }
 
-.container{
-max-width:760px;
-margin:auto;
-padding:40px 20px;
+.container {
+  max-width: 760px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-header{
-text-align:center;
-margin-bottom:40px;
+header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-h1{
-font-size:32px;
-margin-bottom:10px;
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
-.subtitle{
-color:#6e6e73;
-font-size:16px;
+.subtitle {
+  color: #6e6e73;
+  font-size: 16px;
 }
 
-.card{
-background:white;
-padding:28px;
-border-radius:14px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-margin-bottom:28px;
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-bottom: 28px;
 }
 
-h2{
-margin-top:0;
+h2 {
+  margin-top: 0;
+  font-size: 22px;
 }
 
-label{
-font-size:14px;
-font-weight:600;
+p {
+  font-size: 15px;
+  color: #333;
 }
 
-input,textarea{
-width:100%;
-padding:10px;
-margin-top:6px;
-margin-bottom:16px;
-border:1px solid #d2d2d7;
-border-radius:8px;
-font-size:14px;
-box-sizing:border-box;
+label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-top: 12px;
 }
 
-textarea{
-resize:vertical;
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-button{
-background:#0071e3;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-font-size:15px;
-cursor:pointer;
+textarea {
+  resize: vertical;
 }
 
-button:hover{
-background:#005ecb;
+button {
+  background: #0071e3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.footer{
-text-align:center;
-font-size:13px;
-color:#86868b;
-margin-top:40px;
+button:hover {
+  background: #005ecb;
 }
 
-a{
-color:#0071e3;
-text-decoration:none;
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #86868b;
+  margin-top: 40px;
+}
+
+a {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -103,107 +119,87 @@ text-decoration:none;
 
 <div class="container">
 
-<header>
-<h1>Candy Sudoku – Sweet Logic</h1>
-<div class="subtitle">Privacy & Support</div>
-</header>
+  <header>
+    <h1>GeoPassport</h1>
+    <div class="subtitle">Privacy Policy & Support</div>
+  </header>
 
+  <!-- PRIVACY POLICY -->
+  <div class="card">
+    <h2>Privacy Policy</h2>
+    <p><strong>Last Updated:</strong> <span id="currentDate"></span></p>
 
-<!-- PRIVACY POLICY -->
+    <p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
 
-<div class="card">
+    <p>The app may display advertisements to support free access. These ads are served by third-party advertising networks, which may use anonymous, non-personal information such as device type or general usage patterns to deliver relevant ads. No personally identifiable information (such as your name, email address, or location) is shared with these networks.</p>
 
-<h2>Privacy Policy</h2>
+    <p>This application does not offer any in-app purchases. All features of the game are completely free to access.</p>
 
-<p><strong>Last Updated:</strong> April 5, 2025</p>
+    <p>If you are under 13 years old, please play with the permission of a parent or guardian. We are committed to protecting the privacy of children and do not knowingly collect data from minors.</p>
 
-<p>This game does not collect, store, or share any personal information from players. Your gameplay data — such as progress, settings, and game state — is saved locally on your device only and is not transmitted to any external server.</p>
+    <p>By using this app, you agree to the practices described in this policy.</p>
+  </div>
 
-<p>The app displays advertisements to support free access. These ads are served by an advertising network, which may use anonymous, non-personal information such as device type or usage patterns to deliver relevant ads.</p>
+  <!-- CONTACT FORM -->
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p>Have a question, suggestion, or found a bug? We'd love to hear from you!</p>
+    
+    <!-- CHANGE THIS: Replace the action URL with your actual Formspree endpoint -->
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="hidden" name="_subject" value="GeoPassport Support Request">
+      <input type="hidden" id="formTime" name="formTime">
 
-<p>No personally identifiable information such as name, email address, or account credentials is collected by this application.</p>
+      <!-- Honeypot spam trap (keep hidden) -->
+      <input type="text" name="_gotcha" style="display:none">
 
-<p>All in-app purchases are securely processed through the App Store. We do not have access to your payment information.</p>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
 
-<p>If you are under 13 years old, please play with the permission of a parent or guardian.</p>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-<p>By using this app, you agree to the practices described in this policy.</p>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-</div>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
+  <!-- SUPPORT -->
+  <div class="card">
+    <h2>Direct Support</h2>
+    <p>If you prefer not to use the form, you can contact us directly via email:</p>
+    
+    <!-- CHANGE THIS: Replace with your actual support email -->
+    <p><strong>Email:</strong> <a href="mailto:support@geopassport.com">support@geopassport.com</a></p>
+  </div>
 
-<!-- CONTACT FORM -->
-
-<div class="card">
-
-<h2>Contact Form</h2>
-
-<form id="contactForm" action="https://formspree.io/f/mvzwwkgo" method="POST">
-
-<input type="hidden" name="_subject" value="Candy Sudoku Support Request">
-
-<input type="hidden" id="formTime" name="formTime">
-
-<!-- Honeypot spam trap -->
-<input type="text" name="_gotcha" style="display:none">
-
-<label>Name</label>
-<input type="text" name="name" required>
-
-<label>Email</label>
-<input type="email" name="email" required>
-
-<label>Message</label>
-<textarea name="message" rows="5" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</div>
-
-
-<!-- SUPPORT -->
-
-<div class="card">
-
-<h2>Support</h2>
-
-<p>If you experience issues, have questions, or want to report a bug, you can contact us directly:</p>
-
-<p><strong>Email:</strong>
-<a href="mailto:montytheithero@gmail.com">
-montytheithero@gmail.com
-</a>
-</p>
+  <div class="footer">
+    © <span id="footerYear"></span> GeoPassport. All rights reserved.
+  </div>
 
 </div>
-
-
-<div class="footer">
-© 2025 Candy Sudoku – Sweet Logic
-</div>
-
-</div>
-
 
 <script>
+  // Automatically set the current date and year
+  const today = new Date();
+  document.getElementById("currentDate").textContent = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById("footerYear").textContent = today.getFullYear();
 
-const startTime = Date.now();
-document.getElementById("formTime").value = startTime;
+  // Anti-spam time check
+  const startTime = Date.now();
+  document.getElementById("formTime").value = startTime;
 
-document.getElementById("contactForm").addEventListener("submit", function(e){
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    const now = Date.now();
+    const seconds = (now - startTime) / 1000;
 
-const now = Date.now();
-const seconds = (now - startTime) / 1000;
-
-if(seconds < 4){
-e.preventDefault();
-alert("Spam protection triggered. Please try again.");
-}
-
-});
-
+    if (seconds < 4) {
+      e.preventDefault();
+      alert("Spam protection triggered. Please wait a moment before submitting.");
+    }
+  });
 </script>
 
 </body>
